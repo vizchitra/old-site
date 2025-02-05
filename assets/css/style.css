@@ -1,19 +1,580 @@
-* {
-  outline: red 1px solid;
+@layer settings, reboot, theme, layout, utils;
+
+@layer settings {
+
+  :root {
+
+    /* TYPOGRAPHY */
+    /* Main Font */
+    --font-body-sans: 'IBM Plex Sans', 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, system-ui, sans-serif;
+    --font-display-sans: 'Cairo', Optima, Candara, 'Noto Sans', source-sans-pro, system-ui, sans-serif;
+    --font-body-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
+    /* Accent in Display Font  */
+    --font-front-slant: 11;
+    --font-back-slant: -10;
+
+    /* Alphabet Slant in Display Font */
+    --font-a-slant: 0;
+    --font-b-slant: 1;
+    --font-c-slant: 2;
+    --font-d-slant: 3;
+    --font-e-slant: 4;
+    --font-f-slant: 5;
+    --font-g-slant: 6;
+    --font-h-slant: 7;
+    --font-i-slant: 8;
+    --font-j-slant: 9;
+    --font-k-slant: 10;
+    --font-l-slant: 11;
+    --font-m-slant: 0;
+    --font-n-slant: 0;
+    --font-o-slant: -11;
+    --font-p-slant: -10;
+    --font-g-slant: -9;
+    --font-r-slant: -8;
+    --font-s-slant: -7;
+    --font-t-slant: -6;
+    --font-u-slant: -5;
+    --font-v-slant: -4;
+    --font-w-slant: -3;
+    --font-x-slant: -2;
+    --font-y-slant: -1;
+    --font-z-slant: 0;
+
+    /* Size for Font */
+    /* --font-size-fluid-0: clamp(1rem, 2vw, 1.2rem); */
+    --font-size-text-0: clamp(0.875rem, 2vw + 0.25rem, 1.125rem);
+    --font-size-text-1: clamp(1rem, 2vw + 0.25rem, 1.25rem);
+
+    --font-size-display-0: clamp(3.0rem, 12vw, 3.5rem);
+    --font-size-display-1: clamp(2.0rem, 12vw, 2.5rem);
+    --font-size-display-2: clamp(1.7rem, 9vw, 2.25rem);
+    --font-size-display-3: clamp(1.4rem, 6vw, 1.75rem);
+    --font-size-display-4: clamp(1.25rem, 4vw, 1.5rem);
+
+    /* Weight for Font */
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+
+    --size-content-1: 20ch;
+    --size-content-2: 45ch;
+    --size-content-3: 60ch;
+    --size-content-4: 80ch;
+
+    --padding-1: clamp(1rem, 3%, 1.5rem);
+    --padding-2: clamp(1.5rem, 6%, 3rem);
+    --padding-3: clamp(2rem, 8%, 5rem);
+    --padding-4: clamp(3rem, 12%, 6rem);
+
+    --block-flow-1: min(2rem, 4vh);
+    --block-flow-2: min(4rem, 8vh);
+    --block-flow-3: min(8rem, 16vh);
+
+    --layout-gap-1: clamp(1rem, 3vmax, 1.5rem);
+    --layout-gap-2: clamp(1.5rem, 6vmax, 3rem);
+    --layout-gap-3: clamp(3rem, 8vmax, 4rem);
+
+    /* COLOUR */
+    /* Main Colour Pallette */
+    --color-viz-white: #ffffff;
+    /* oklch(100% 0 0) */
+    --color-viz-black: #131313;
+    /*oklch(0.19% 0 0)*/
+    --color-viz-grey: oklch(41.65% 0 0);
+    --color-viz-yellow: oklch(89.01% 0.1087 81.8);
+    --color-viz-teal: oklch(86.69% 0.0766 188.62);
+    --color-viz-blue: oklch(80.04% 0.0763 267.25);
+    --color-viz-orange: oklch(78.25% 0.1221 47.22);
+    --color-viz-pink: oklch(74.82% 0.1333 354.07);
+
+    /* Additional Colour Pallette */
+    /* Use Light for Background; Use Dark for Text */
+    --color-viz-yellow-light: oklch(93.41% 0.0654 82.66);
+    --color-viz-teal-light: oklch(90.38% 0.0612 188.47);
+    --color-viz-blue-light: oklch(86.96% 0.047 266.67);
+    --color-viz-blue-dark: oklch(63.99% 0.1131 269.73);
+    --color-viz-orange-dark: oklch(63.46% 0.1516 42.32);
+    --color-viz-pink-dark: oklch(59.66% 0.1672 357.85);
+
+
+
+
+
+  }
+
 }
 
-p {
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+/** Layer REBOOT basic design **/
+
+@layer reboot {
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    tab-size: 4;
+    word-break: break-word;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-smooth: always;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+  }
+
+  p {
+    text-wrap: pretty;
+    margin-block-start: 0;
+  }
+
+  :is(h1, h2, h3, h4, h5, h6) {
+    line-height: 1.2;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  strong {
+    font-weight: bolder;
+  }
+
+  img,
+  object {
+    max-width: 100%;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: ui-monospace, monospace;
+    font-size: 1em;
+  }
+
+  small {
+    font-size: 80%;
+  }
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  summary {
+    display: list-item;
+  }
+
+  ul {
+    padding-inline-start: 1rem;
+
+  }
+
+  nav ol,
+  nav li {
+    list-style: none;
+  }
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+}
+
+/** Layers - THEME - For ViZCHITRA brand**/
+
+@layer theme {
+
+  .theme-light {
+    color: var(--color-viz-grey);
+    background-color: var(--color-viz-white);
+  }
+
+  .theme-dark {
+    color: var(--color-viz-white);
+    background-color: var(--color-viz-black);
+  }
+
+  .viz-block {
+    padding-inline: var(--padding-3);
+    padding-block: var(--padding-2);
+
+    @media all and (width> 1200px) {
+      padding-inline-start: 14rem;
+    }
+
+  }
+
+  .body-container {
+    margin-block-start: var(--block-flow-3);
+    margin-block-end: var(--block-flow-3);
+  }
+
+  .viz-section {
+    display: block;
+    max-width: 80ch;
+    margin-block-start: var(--block-flow-3);
+    margin-block-end: var(--block-flow-3);
+  }
+
+  :is(.viz-header-1, .viz-header-2, .viz-header-3, .viz-header-4) {
+    font-family: var(--font-display-sans);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: 'slnt' 0;
+    max-inline-size: var(--size-content-4);
+    /* margin-block-end: 0.25rem;
+    margin-block-start: 1rem; */
+  }
+
+  .viz-header-1 {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-display-1);
+    text-transform: uppercase;
+    margin-block-end: 2rem;
+    ;
+  }
+
+  .viz-header-2 {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-display-2);
+    text-transform: uppercase;
+    padding-block-start: var(--layout-gap-1);
+    margin-block-start: 2rem;
+    margin-block-end: 0.5rem;
+
+  }
+
+  .viz-header-3 {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-display-3);
+    margin-block-end: 0.5rem;
+  }
+
+  .viz-header-4 {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-display-4);
+    margin-block-end: 0.5rem;
+  }
+
+
+  /* ol,
+  ul,
+  p {
+    font-family: var(--font-body-sans);
+    font-size: var(--font-size-text-0);
+    font-weight: var(--font-weight-regular);
+
+    max-inline-size: var(--size-content-4);
+
+  } */
+
+  .viz-text {
+    font-family: var(--font-body-sans);
+    font-size: var(--font-size-text-0);
+    font-weight: var(--font-weight-regular);
+
+    max-inline-size: var(--size-content-4);
+
+  }
+
+  .viz-lead {
+    font-family: var(--font-body-sans);
+    font-size: var(--font-size-text-1);
+    font-weight: var(--font-weight-regular);
+
+    max-inline-size: var(--size-content-4);
+
+  }
+
+
+  /* Only for VIZCHTRA logotype - FIXED VALUES*/
+  .viz-logo {
+    display: flex;
+    max-width: var(--size-content-4);
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+  }
+
+  .viz-tagline {
+    max-width: 20ch;
+    font-family: var(--font-display-sans);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-display-4);
+    font-optical-sizing: auto;
+    font-style: normal;
+
+  }
+
+
+  .viz-logotype {
+    font-family: var(--font-display-sans);
+    font-size: var(--font-size-display-0);
+
+    .V1 {
+      font-variation-settings: 'slnt' -4, 'wght' 750;
+      letter-spacing: 0.25rem;
+    }
+
+    .I1 {
+      font-variation-settings: 'slnt' 8, 'wght' 750;
+      letter-spacing: 0.0rem;
+    }
+
+    .Z1 {
+      font-variation-settings: 'slnt' 0, 'wght' 750;
+      letter-spacing: -0.1rem;
+    }
+
+    .C2 {
+      font-variation-settings: 'slnt' 2, 'wght' 400;
+      letter-spacing: -0.1rem;
+    }
+
+    .H2 {
+      font-variation-settings: 'slnt' 7, 'wght' 400;
+      letter-spacing: -0.1rem;
+    }
+
+    .I2 {
+      font-variation-settings: 'slnt' 8, 'wght' 400;
+      letter-spacing: -0.3rem;
+    }
+
+    .T2 {
+      font-variation-settings: 'slnt' -6, 'wght' 400;
+      letter-spacing: -0.1rem;
+    }
+
+    .R2 {
+      font-variation-settings: 'slnt' -8, 'wght' 400;
+      letter-spacing: -0.1rem;
+    }
+
+    .A2 {
+      font-variation-settings: 'slnt' 0, 'wght' 400;
+      letter-spacing: 0.0rem;
+    }
+  }
+
+
+  /* Alphabet Slant Variations */
+  .a {
+    font-variation-settings: 'slnt' var(--font-a-slant);
+  }
+
+  .b {
+    font-variation-settings: 'slnt' var(--font-b-slant);
+  }
+
+  .c {
+    font-variation-settings: 'slnt' var(--font-b-slant);
+  }
+
+  .d {
+    font-variation-settings: 'slnt' var(--font-d-slant);
+  }
+
+  .e {
+    font-variation-settings: 'slnt' var(--font-e-slant);
+  }
+
+  .f {
+    font-variation-settings: 'slnt' var(--font-f-slant);
+  }
+
+  .g {
+    font-variation-settings: 'slnt' var(--font-g-slant);
+  }
+
+  .h {
+    font-variation-settings: 'slnt' var(--font-h-slant);
+  }
+
+  .i {
+    font-variation-settings: 'slnt' var(--font-i-slant);
+  }
+
+  .j {
+    font-variation-settings: 'slnt' var(--font-j-slant);
+  }
+
+  .k {
+    font-variation-settings: 'slnt' var(--font-k-slant);
+  }
+
+  .l {
+    font-variation-settings: 'slnt' var(--font-l-slant);
+  }
+
+  .m {
+    font-variation-settings: 'slnt' var(--font-m-slant);
+  }
+
+  .n {
+    font-variation-settings: 'slnt' var(--font-n-slant);
+  }
+
+  .o {
+    font-variation-settings: 'slnt' var(--font-o-slant);
+  }
+
+  .p {
+    font-variation-settings: 'slnt' var(--font-p-slant);
+  }
+
+  .q {
+    font-variation-settings: 'slnt' var(--font-q-slant);
+  }
+
+  .r {
+    font-variation-settings: 'slnt' var(--font-r-slant);
+  }
+
+  .s {
+    font-variation-settings: 'slnt' var(--font-s-slant);
+  }
+
+  .t {
+    font-variation-settings: 'slnt' var(--font-t-slant);
+  }
+
+  .u {
+    font-variation-settings: 'slnt' var(--font-u-slant);
+  }
+
+  .v {
+    font-variation-settings: 'slnt' var(--font-v-slant);
+  }
+
+  .w {
+    font-variation-settings: 'slnt' var(--font-w-slant);
+  }
+
+  .x {
+    font-variation-settings: 'slnt' var(--font-x-slant);
+  }
+
+  .y {
+    font-variation-settings: 'slnt' var(--font-y-slant);
+  }
+
+  .z {
+    font-variation-settings: 'slnt' var(--font-z-slant);
+  }
+
+}
+
+/** Layers - LAYOUT - For section and layout**/
+@layer layout {
+
+
+  .viz-flex {
+    display: flex;
+  }
+
+  .viz-flexbox-grid {
+
+    --min: var(--size-content-1);
+    --gap: 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+  }
+
+  .viz-flexbox-grid>* {
+    flex: 1 1 var(--min);
+  }
+
+
+  .viz-card {
+    max-width: var(--size-content-1);
+  }
+
 }
 
 
-h1 {
-  font-family: 'Cairo', serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-  font-variation-settings: 'slnt' 0;
+
+
+
+
+
+@layer utils {
+
+  .text-front-slant {
+    font-variation-settings: 'slnt' var(--font-front-slant);
+  }
+
+  .text-back-slant {
+    font-variation-settings: 'slnt' var(--font-back-slant);
+  }
+
+  .strong {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .normal {
+    font-weight: normal;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .text-white {
+    color: var(--color-viz-white);
+  }
+
+  .text-black {
+    color: var(--color-viz-black);
+  }
+
+  .text-grey {
+    color: var(--color-viz-grey);
+  }
+
+
 }
 
 
-li {}
+
+/* Debug */
+
+/* * {
+  outline: 1px rebeccapurple solid;
+} */
