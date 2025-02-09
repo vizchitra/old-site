@@ -61,10 +61,11 @@
     --font-weight-black: 900;
 
     /* SIZING & SPACING */
-    --size-content-1: 20ch;
+    --size-content-0: 20ch;
+    --size-content-1: 25ch;
     --size-content-2: 45ch;
     --size-content-3: 60ch;
-    --size-content-4: 80ch;
+    --size-content-4: 75ch;
 
     --padding-1: clamp(1rem, 3%, 1.5rem);
     --padding-2: clamp(1.5rem, 6%, 3rem);
@@ -127,7 +128,7 @@
 
   html {
     font-family: ui-sans-serif, system-ui, sans-serif;
-    font-size: clamp(0.938rem, 2vw + 0.25rem, 1.25rem);
+    font-size: clamp(0.875rem, 2vw + 0.25rem, 1.25rem);
     line-height: 1.5;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
@@ -521,7 +522,7 @@
 
   .viz-flexbox-grid {
 
-    --min: var(--size-content-1);
+    --min: var(--size-content-0);
     --gap: 2rem;
 
     display: flex;
@@ -535,58 +536,58 @@
 
 
   .viz-card {
-    max-width: var(--size-content-1);
-  }
+    max-width: var(--size-content-1;
+    }
 
-}
-
-
-
-
-
-
-
-@layer utils {
-
-  .text-front-slant {
-    font-variation-settings: 'slnt' var(--font-front-slant);
-  }
-
-  .text-back-slant {
-    font-variation-settings: 'slnt' var(--font-back-slant);
-  }
-
-  .strong {
-    font-weight: var(--font-weight-bold);
-  }
-
-  .normal {
-    font-weight: normal;
-  }
-
-  .italic {
-    font-style: italic;
-  }
-
-  .text-white {
-    color: var(--color-viz-white);
-  }
-
-  .text-black {
-    color: var(--color-viz-black);
-  }
-
-  .text-grey {
-    color: var(--color-viz-grey);
   }
 
 
-}
 
 
 
-/* Debug */
 
-/* * {
+
+  @layer utils {
+
+    .text-front-slant {
+      font-variation-settings: 'slnt' var(--font-front-slant);
+    }
+
+    .text-back-slant {
+      font-variation-settings: 'slnt' var(--font-back-slant);
+    }
+
+    .strong {
+      font-weight: var(--font-weight-bold);
+    }
+
+    .normal {
+      font-weight: normal;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+
+    .text-viz-white {
+      color: var(--color-viz-white);
+    }
+
+    .text-viz-black {
+      color: var(--color-viz-black);
+    }
+
+    .text-viz-grey {
+      color: var(--color-viz-grey);
+    }
+
+
+  }
+
+
+
+  /* Debug */
+
+  /* * {
   outline: 1px rebeccapurple solid;
 } */
