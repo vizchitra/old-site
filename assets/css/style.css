@@ -264,7 +264,7 @@
   .viz-display-1 {
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-display-1);
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-block-end: 2rem;
     ;
   }
@@ -272,7 +272,7 @@
   .viz-display-2 {
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-display-2);
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     padding-block-start: var(--layout-gap-1);
     margin-block-start: 2rem;
     margin-block-end: 0.5rem;
