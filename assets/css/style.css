@@ -5,55 +5,52 @@
   :root {
 
     /* TYPOGRAPHY */
-    /* Main Font */
     --font-text-sans: 'IBM Plex Sans', 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, system-ui, sans-serif;
     --font-display-sans: 'Cairo', Optima, Candara, 'Noto Sans', source-sans-pro, system-ui, sans-serif;
     --font-body-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 
     /* Accent in Display Font  */
-    --font-front-slant: 11;
-    --font-back-slant: -10;
+    --font-slant-front: 11;
+    --font-slant-back: -10;
+    --font-slant-zero: 0;
 
-    /* Alphabet Slant in Display Font */
-    --font-a-slant: 0;
-    --font-b-slant: 1;
-    --font-c-slant: 2;
-    --font-d-slant: 3;
-    --font-e-slant: 4;
-    --font-f-slant: 5;
-    --font-g-slant: 6;
-    --font-h-slant: 7;
-    --font-i-slant: 8;
-    --font-j-slant: 9;
-    --font-k-slant: 10;
-    --font-l-slant: 11;
-    --font-m-slant: 0;
-    --font-n-slant: 0;
-    --font-o-slant: -11;
-    --font-p-slant: -10;
-    --font-g-slant: -9;
-    --font-r-slant: -8;
-    --font-s-slant: -7;
-    --font-t-slant: -6;
-    --font-u-slant: -5;
-    --font-v-slant: -4;
-    --font-w-slant: -3;
-    --font-x-slant: -2;
-    --font-y-slant: -1;
-    --font-z-slant: 0;
+    /* Alphabet Slant in a-z Display Font */
+    --font-slant-a: 0;
+    --font-slant-b: 1;
+    --font-slant-c: 2;
+    --font-slant-d: 3;
+    --font-slant-e: 4;
+    --font-slant-f: 5;
+    --font-slant-g: 6;
+    --font-slant-h: 7;
+    --font-slant-i: 8;
+    --font-slant-j: 9;
+    --font-slant-k: 10;
+    --font-slant-l: 11;
+    --font-slant-m: 0;
+    --font-slant-n: 0;
+    --font-slant-o: -11;
+    --font-slant-p: -10;
+    --font-slant-g: -9;
+    --font-slant-r: -8;
+    --font-slant-s: -7;
+    --font-slant-t: -6;
+    --font-slant-u: -5;
+    --font-slant-v: -4;
+    --font-slant-w: -3;
+    --font-slant-x: -2;
+    --font-slant-y: -1;
+    --font-slant-z: 0;
 
-    /* Size for Font */
-    /* --font-size-fluid-0: clamp(1rem, 2vw, 1.2rem); */
-    --font-size-text-0: clamp(0.875rem, 2vw + 0.25rem, 1.125rem);
-    --font-size-text-1: clamp(1rem, 2vw + 0.25rem, 1.25rem);
+    --font-size-text-0: 0.9rem;
+    --font-size-text-1: 1rem;
 
-    --font-size-display-0: calc(1.5 * clamp(2rem, 2vw + 1rem, 2.5rem));
-    --font-size-display-1: clamp(2rem, 2vw + 1rem, 2.5rem);
-    --font-size-display-2: clamp(1.6rem, 2vw + 1rem, 2rem);
-    --font-size-display-3: clamp(1.4rem, 2vw + 1rem, 1.75rem);
-    --font-size-display-4: clamp(1.2rem, 4vw, 1.5rem);
+    --font-size-display-0: 2.5rem;
+    --font-size-display-1: 2.0rem;
+    --font-size-display-2: 1.6rem;
+    --font-size-display-3: 1.4rem;
+    --font-size-display-4: 1.2rem;
 
-    /* Weight for Font */
     --font-weight-extralight: 200;
     --font-weight-light: 300;
     --font-weight-regular: 400;
@@ -63,6 +60,7 @@
     --font-weight-extrabold: 800;
     --font-weight-black: 900;
 
+    /* SIZING & SPACING */
     --size-content-1: 20ch;
     --size-content-2: 45ch;
     --size-content-3: 60ch;
@@ -81,37 +79,43 @@
     --layout-gap-2: clamp(1.5rem, 6vmax, 3rem);
     --layout-gap-3: clamp(3rem, 8vmax, 4rem);
 
-    /* COLOUR */
-    /* Main Colour Pallette */
+    /* COLOR PALLETE*/
+    /* HEX Colors */
     --color-viz-white: #ffffff;
-    /* oklch(100% 0 0) */
     --color-viz-black: #131313;
-    /*oklch(0.19% 0 0)*/
+    --color-viz-grey: #4c4c4c;
+    --color-viz-yellow: #ffd485;
+    --color-viz-teal: #97e4dd;
+    --color-viz-blue: #a8bdf0;
+    --color-viz-orange: #f89f72;
+    --color-viz-pink: #ee88b3;
+    --color-viz-yellow-light: #ffe6b8;
+    --color-viz-teal-light: #b1ede7;
+    --color-viz-blue-light: #c6d4f7;
+    --color-viz-blue-dark: #718bd1;
+    --color-viz-orange-dark: #d46637;
+    --color-viz-pink-dark: #c94b7f;
+
+    /* OKLCH Colors */
+    --color-viz-white: oklch(100% 0 0);
+    --color-viz-black: oklch(0.19% 0 0);
     --color-viz-grey: oklch(41.65% 0 0);
     --color-viz-yellow: oklch(89.01% 0.1087 81.8);
     --color-viz-teal: oklch(86.69% 0.0766 188.62);
     --color-viz-blue: oklch(80.04% 0.0763 267.25);
     --color-viz-orange: oklch(78.25% 0.1221 47.22);
     --color-viz-pink: oklch(74.82% 0.1333 354.07);
-
-    /* Additional Colour Pallette */
-    /* Use Light for Background; Use Dark for Text */
     --color-viz-yellow-light: oklch(93.41% 0.0654 82.66);
     --color-viz-teal-light: oklch(90.38% 0.0612 188.47);
     --color-viz-blue-light: oklch(86.96% 0.047 266.67);
     --color-viz-blue-dark: oklch(63.99% 0.1131 269.73);
     --color-viz-orange-dark: oklch(63.46% 0.1516 42.32);
     --color-viz-pink-dark: oklch(59.66% 0.1672 357.85);
-
-
-
-
-
   }
 
 }
 
-/** Layer REBOOT basic design **/
+/** LAYER REBOOT & NORMALIZE **/
 
 @layer reboot {
 
@@ -123,6 +127,7 @@
 
   html {
     font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(0.875rem, 2vw + 0.25rem, 1.25rem);
     line-height: 1.5;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
@@ -213,7 +218,7 @@
 
 }
 
-/** Layers - THEME - For ViZCHITRA brand**/
+/** LAYER - THEME - ViZCHITRA BRAND**/
 
 @layer theme {
 
@@ -227,6 +232,12 @@
     background-color: var(--color-viz-black);
   }
 
+  .viz-body-container {
+    font-family: var(--font-text-sans);
+    margin-block-start: var(--block-flow-3);
+    margin-block-end: var(--block-flow-3);
+  }
+
   .viz-block {
     padding-inline: var(--padding-3);
     padding-block: var(--padding-2);
@@ -235,12 +246,6 @@
       padding-inline-start: 14rem;
     }
 
-  }
-
-  .body-container {
-    font-family: var(--font-text-sans);
-    margin-block-start: var(--block-flow-3);
-    margin-block-end: var(--block-flow-3);
   }
 
   .viz-section {
@@ -257,6 +262,7 @@
     font-variation-settings: 'slnt' 0;
     font-synthesis: weight;
     max-inline-size: var(--size-content-4);
+    line-height: 1.2;
     /* margin-block-end: 0.25rem;
     margin-block-start: 1rem; */
   }
@@ -396,107 +402,111 @@
 
   /* Alphabet Slant Variations */
   .a {
-    font-variation-settings: 'slnt' var(--font-a-slant);
+    font-variation-settings: 'slnt' var(--font-slant-a);
   }
 
   .b {
-    font-variation-settings: 'slnt' var(--font-b-slant);
+    font-variation-settings: 'slnt' var(--font-slant-b);
   }
 
   .c {
-    font-variation-settings: 'slnt' var(--font-b-slant);
+    font-variation-settings: 'slnt' var(--font-slant-b);
   }
 
   .d {
-    font-variation-settings: 'slnt' var(--font-d-slant);
+    font-variation-settings: 'slnt' var(--font-slant-d);
   }
 
   .e {
-    font-variation-settings: 'slnt' var(--font-e-slant);
+    font-variation-settings: 'slnt' var(--font-slant-e);
   }
 
   .f {
-    font-variation-settings: 'slnt' var(--font-f-slant);
+    font-variation-settings: 'slnt' var(--font-slant-f);
   }
 
   .g {
-    font-variation-settings: 'slnt' var(--font-g-slant);
+    font-variation-settings: 'slnt' var(--font-slant-g);
   }
 
   .h {
-    font-variation-settings: 'slnt' var(--font-h-slant);
+    font-variation-settings: 'slnt' var(--font-slant-h);
   }
 
   .i {
-    font-variation-settings: 'slnt' var(--font-i-slant);
+    font-variation-settings: 'slnt' var(--font-slant-i);
   }
 
   .j {
-    font-variation-settings: 'slnt' var(--font-j-slant);
+    font-variation-settings: 'slnt' var(--font-slant-j);
   }
 
   .k {
-    font-variation-settings: 'slnt' var(--font-k-slant);
+    font-variation-settings: 'slnt' var(--font-slant-k);
   }
 
   .l {
-    font-variation-settings: 'slnt' var(--font-l-slant);
+    font-variation-settings: 'slnt' var(--font-slant-l);
   }
 
   .m {
-    font-variation-settings: 'slnt' var(--font-m-slant);
+    font-variation-settings: 'slnt' var(--font-slant-m);
   }
 
   .n {
-    font-variation-settings: 'slnt' var(--font-n-slant);
+    font-variation-settings: 'slnt' var(--font-slant-n);
   }
 
   .o {
-    font-variation-settings: 'slnt' var(--font-o-slant);
+    font-variation-settings: 'slnt' var(--font-slant-o);
   }
 
   .p {
-    font-variation-settings: 'slnt' var(--font-p-slant);
+    font-variation-settings: 'slnt' var(--font-slant-p);
   }
 
   .q {
-    font-variation-settings: 'slnt' var(--font-q-slant);
+    font-variation-settings: 'slnt' var(--font-slant-q);
   }
 
   .r {
-    font-variation-settings: 'slnt' var(--font-r-slant);
+    font-variation-settings: 'slnt' var(--font-slant-r);
   }
 
   .s {
-    font-variation-settings: 'slnt' var(--font-s-slant);
+    font-variation-settings: 'slnt' var(--font-slant-s);
   }
 
   .t {
-    font-variation-settings: 'slnt' var(--font-t-slant);
+    font-variation-settings: 'slnt' var(--font-slant-t);
   }
 
   .u {
-    font-variation-settings: 'slnt' var(--font-u-slant);
+    font-variation-settings: 'slnt' var(--font-slant-u);
   }
 
   .v {
-    font-variation-settings: 'slnt' var(--font-v-slant);
+    font-variation-settings: 'slnt' var(--font-slant-v);
   }
 
   .w {
-    font-variation-settings: 'slnt' var(--font-w-slant);
+    font-variation-settings: 'slnt' var(--font-slant-w);
   }
 
   .x {
-    font-variation-settings: 'slnt' var(--font-x-slant);
+    font-variation-settings: 'slnt' var(--font-slant-x);
   }
 
   .y {
-    font-variation-settings: 'slnt' var(--font-y-slant);
+    font-variation-settings: 'slnt' var(--font-slant-y);
   }
 
   .z {
-    font-variation-settings: 'slnt' var(--font-z-slant);
+    font-variation-settings: 'slnt' var(--font-slant-z);
+  }
+
+  .zero {
+    font-variation-settings: 'slnt' var(--font-slant-zero);
   }
 
 }
