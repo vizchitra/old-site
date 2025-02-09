@@ -128,7 +128,7 @@
 
   html {
     font-family: ui-sans-serif, system-ui, sans-serif;
-    font-size: clamp(0.875rem, 2vw + 0.25rem, 1.25rem);
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.25rem);
     line-height: 1.5;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
@@ -252,8 +252,8 @@
   .viz-section {
     display: block;
     max-width: 80ch;
-    margin-block-start: var(--block-flow-3);
-    margin-block-end: var(--block-flow-3);
+    margin-block-start: var(--block-flow-2);
+    margin-block-end: var(--block-flow-2);
   }
 
   :is(.viz-display-1, .viz-display-2, .viz-display-3, .viz-display-4) {
