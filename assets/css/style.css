@@ -592,12 +592,11 @@
     min-width: var(--size-content-1);
 
     ul {
-      padding-inline-start: 0;
+      line-height: var(--line-height-tight);
     }
 
-    ul ol {
-      padding-inline-start: 0;
-      line-height: var(--line-height-tight);
+    p:has(+ ul) {
+      margin-block-end: 0.5rem;
     }
 
   }
