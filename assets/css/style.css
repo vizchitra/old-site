@@ -150,21 +150,42 @@
     margin: 0;
     min-height: 100vh;
     text-rendering: optimizeLegibility;
+    line-height: 1.5;
+  }
+
+  :is(h1, h2, h3, h4, h5, h6) {
+    line-height: 1.15;
+    text-wrap: balance;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  :is(figure, blockquote, dl, dd) {
+    margin-block-end: 0;
+  }
+
+  :is(p, pre, ul, dl) {
+    margin-block-start: 0;
+    margin-block-end: 1rem;
   }
 
   p {
     text-wrap: pretty;
-    margin-block-start: 0;
   }
 
-  :is(h1, h2, h3, h4, h5, h6) {
-    line-height: 1.2;
-    text-wrap: balance;
-    margin: 0;
-  }
-
+  b,
   strong {
     font-weight: bolder;
+  }
+
+  i,
+  em {
+    font-style: italic;
+  }
+
+  a {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
   }
 
   img,
@@ -181,7 +202,7 @@
   }
 
   small {
-    font-size: 80%;
+    font-size: 85%;
   }
 
   sub,
@@ -206,7 +227,8 @@
 
   ul {
     padding-inline-start: 1rem;
-
+    margin-block-start: 0;
+    margin-block-end: 0;
   }
 
   nav ol,
@@ -214,11 +236,13 @@
     list-style: none;
   }
 
-  button,
-  input,
-  optgroup,
-  select,
-  textarea {
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+
+  :is(button, input, optgroup, select, textarea) {
     font-family: inherit;
     font-size: 100%;
     line-height: 1.15;
@@ -230,16 +254,6 @@
 /** LAYER - THEME - ViZCHITRA BRAND**/
 
 @layer theme {
-
-  .theme-light {
-    color: var(--color-viz-grey);
-    background-color: var(--color-viz-white);
-  }
-
-  .theme-dark {
-    color: var(--color-viz-white);
-    background-color: var(--color-viz-black);
-  }
 
   .viz-body-container {
     font-family: var(--font-text-sans);
