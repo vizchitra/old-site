@@ -257,8 +257,8 @@
 
   .viz-body-container {
     font-family: var(--font-text-sans);
-    margin-block-start: var(--block-flow-3);
-    margin-block-end: var(--block-flow-3);
+    /* margin-block-start: var(--block-flow-1); */
+    margin-block-end: var(--block-flow-1);
   }
 
   .viz-block {
@@ -354,32 +354,43 @@
     font-size: larger;
   }
 
-
-
   /* Only for VIZCHTRA logotype - FIXED VALUES*/
+
   .viz-logo {
+
+    >.viz-logo-type {
+      position: relative;
+      top: 8.75rem;
+      left: 5rem;
+    }
+
+    >.viz-logo-lines {
+      top: 0;
+      height: 12rem;
+    }
+  }
+
+  .viz-tag {
+    max-width: 80ch;
     display: flex;
-    max-width: var(--size-content-4);
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-
+    align-items: flex-end;
+    flex-direction: row-reverse;
   }
 
-  .viz-tagline {
-    max-width: 20ch;
+  .viz-tag-line {
+    max-width: 30ch;
     font-family: var(--font-display-sans);
-    font-weight: var(--font-weight-medium);
     font-size: var(--font-size-display-3);
+    font-weight: var(--font-weight-medium);
     font-optical-sizing: auto;
-    font-style: normal;
-
+    text-align: end;
   }
 
 
-  .viz-logotype {
+  .viz-logo-type {
     font-family: var(--font-display-sans);
     font-size: var(--font-size-display-0);
+    font-optical-sizing: auto;
 
     .V1 {
       font-variation-settings: 'slnt' -4, 'wght' 750;
@@ -426,7 +437,6 @@
       letter-spacing: 0.0rem;
     }
   }
-
 
   /* Alphabet Slant Variations */
   .a {
@@ -581,8 +591,6 @@
   }
 
 }
-
-
 
 
 
