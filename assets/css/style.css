@@ -45,7 +45,7 @@
     --font-size-text-0: 0.9rem;
     --font-size-text-1: 1rem;
     --font-size-text-2: 1.1rem;
-    --font-size-text-3: 1.2rem;
+    --font-size-text-3: 1.15rem;
 
     --font-size-display-0: 2.5rem;
     --font-size-display-1: 2.0rem;
@@ -351,7 +351,7 @@
   }
 
   .viz-lead {
-    font-size: var(--font-size-text-3);
+    font-size: larger;
   }
 
 
