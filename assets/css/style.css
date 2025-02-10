@@ -45,7 +45,7 @@
     --font-size-text-0: 0.9rem;
     --font-size-text-1: 1rem;
     --font-size-text-2: 1.1rem;
-
+    --font-size-text-3: 1.2rem;
 
     --font-size-display-0: 2.5rem;
     --font-size-display-1: 2.0rem;
@@ -71,9 +71,9 @@
     /* SIZING & SPACING */
     --size-content-0: 20ch;
     --size-content-1: 25ch;
-    --size-content-2: 45ch;
+    --size-content-2: 30ch;
     --size-content-3: 60ch;
-    --size-content-4: 75ch;
+    --size-content-4: 70ch;
 
     --padding-1: clamp(1rem, 3%, 1.5rem);
     --padding-2: clamp(1.5rem, 6%, 3rem);
@@ -143,7 +143,6 @@
     tab-size: 4;
     word-break: break-word;
     -webkit-font-smoothing: subpixel-antialiased;
-    font-smooth: always;
   }
 
   body {
@@ -169,7 +168,8 @@
     margin-block-end: 1rem;
   }
 
-  p {
+  p,
+  li {
     text-wrap: pretty;
   }
 
@@ -332,18 +332,6 @@
     margin-block-end: 0.5rem;
   }
 
-
-  /* ol,
-  ul,
-  p {
-    font-family: var(--font-body-sans);
-    font-size: var(--font-size-text-0);
-    font-weight: var(--font-weight-regular);
-
-    max-inline-size: var(--size-content-4);
-
-  } */
-
   :is(.viz-text-0, .viz-text-1, .viz-text-2, .viz-lead) {
     font-family: var(--font-text-sans);
     font-weight: var(--font-weight-regular);
@@ -363,7 +351,7 @@
   }
 
   .viz-lead {
-    font-size: var(--font-size-text-1);
+    font-size: var(--font-size-text-3);
   }
 
 
@@ -557,11 +545,14 @@
 
   .viz-flex {
     display: flex;
+    gap: var(--padding-1);
+    flex-wrap: wrap;
+    flex-direction: row;
   }
 
   .viz-flexbox-grid {
     --min: var(--size-content-0);
-    --gap: 1rem;
+    --gap: var(--padding-2);
 
     display: flex;
     flex-wrap: wrap;
@@ -572,31 +563,19 @@
     flex: 1 1 var(--min);
   }
 
-
-  .viz-flexbox-grid-column {
-    --min: var(--size-content-0);
-    --gap: 1rem;
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: var(--gap);
+  .viz-card-small {
+    max-width: var(--size-content-1);
   }
-
-  .viz-flexbox-grid>* {
-    flex: 1 1 var(--min);
-  }
-
 
   .viz-card {
-    min-width: var(--size-content-1);
+    min-width: var(--size-content-2);
 
-    ul {
-      line-height: var(--line-height-tight);
-    }
+    /* ul {
+      line-height: var(--line-height-compact);
+    } */
 
     p:has(+ ul) {
-      margin-block-end: 0.5rem;
+      margin-block-end: 0.25rem;
     }
 
   }
@@ -611,12 +590,12 @@
 
 @layer utils {
 
-  .text-front-slant {
-    font-variation-settings: 'slnt' var(--font-front-slant);
+  .text-slant-front {
+    font-variation-settings: 'slnt' var(--font-slant-front);
   }
 
-  .text-back-slant {
-    font-variation-settings: 'slnt' var(--font-back-slant);
+  .text-slant-back {
+    font-variation-settings: 'slnt' var(--font-slant-back);
   }
 
   .strong {
