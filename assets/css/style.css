@@ -93,20 +93,29 @@
     --color-viz-white: #ffffff;
     --color-viz-black: #131313;
     --color-viz-grey: #4c4c4c;
+
     --color-viz-yellow: #ffd485;
     --color-viz-teal: #97e4dd;
     --color-viz-blue: #a8bdf0;
     --color-viz-orange: #f89f72;
     --color-viz-pink: #ee88b3;
+
     --color-viz-yellow-light: #ffe6b8;
     --color-viz-teal-light: #b1ede7;
     --color-viz-blue-light: #c6d4f7;
-    --color-viz-blue-dark: #718bd1;
+
+    --color-viz-yellow-dark: oklch(from var(--color-viz-yellow) calc(l * .75) c h);
+    --color-viz-teal-dark: oklch(from var(--color-viz-teal) calc(l * .75) c h);
+    --color-viz-blue-dark: oklch(from var(--color-viz-blue) calc(l * .75) c h);
+    --color-viz-orange-dark: oklch(from var(--color-viz-orange) calc(l * .75) c h);
+    --color-viz-pink-dark: oklch(from var(--color-viz-pink) calc(l * .75) c h);
+
+    /* --color-viz-blue-dark: #718bd1;
     --color-viz-orange-dark: #d46637;
-    --color-viz-pink-dark: #c94b7f;
+    --color-viz-pink-dark: #c94b7f; */
 
     /* OKLCH Colors */
-    --color-viz-white: oklch(100% 0 0);
+    /* --color-viz-white: oklch(100% 0 0);
     --color-viz-black: oklch(0.19% 0 0);
     --color-viz-grey: oklch(41.65% 0 0);
     --color-viz-yellow: oklch(89.01% 0.1087 81.8);
@@ -119,7 +128,7 @@
     --color-viz-blue-light: oklch(86.96% 0.047 266.67);
     --color-viz-blue-dark: oklch(63.99% 0.1131 269.73);
     --color-viz-orange-dark: oklch(63.46% 0.1516 42.32);
-    --color-viz-pink-dark: oklch(59.66% 0.1672 357.85);
+    --color-viz-pink-dark: oklch(59.66% 0.1672 357.85); */
   }
 
 }
@@ -561,7 +570,15 @@
     display: flex;
     gap: var(--padding-1);
     flex-wrap: wrap;
+  }
+
+  .viz-flex-scroll {
+    display: flex;
+    gap: var(--padding-1);
+    flex-wrap: nowrap;
     flex-direction: row;
+    overflow-y: scroll;
+    padding-block-end: var(--block-flow-1);
   }
 
   .viz-flexbox-grid {
@@ -582,17 +599,30 @@
   }
 
   .viz-card {
+    max-width: 35ch;
     min-width: var(--size-content-2);
+    padding: 3px;
 
-    /* ul {
-      line-height: var(--line-height-compact);
-    } */
+    display: grid;
+    background: var(--color-viz-grey);
+    clip-path: polygon(calc(100% - 24px) 0%, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px), 0 0);
+    clip-path: polygon(98% 3%, 99% 24px, 100% 100%, 24px 100%, 2% calc(100% - 24px), 0 0);
+
+    & .viz-card-container {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      padding: 1rem;
+      clip-path: polygon(calc(100% - 22px) 0%, 100% 22px, 100% 100%, 22px 100%, 0 calc(100% - 22px), 0 0);
+      clip-path: polygon(98% 3%, 98% 22px, 100% 100%, 22px 100%, 2% calc(100% - 22px), 0 0);
+
+    }
 
     p:has(+ ul) {
       margin-block-end: 0.25rem;
     }
-
   }
+
 
 }
 
@@ -652,6 +682,37 @@
 
   .viz-text-pink {
     color: var(--color-viz-pink);
+  }
+
+
+  .viz-text-yellow-dark {
+    color: var(--color-viz-yellow-dark);
+  }
+
+  .viz-text-teal-dark {
+    color: var(--color-viz-teal-dark);
+  }
+
+  .viz-text-blue-dark {
+    color: var(--color-viz-blue-dark);
+  }
+
+
+  .viz-text-orange-dark {
+    color: var(--color-viz-orange-dark);
+  }
+
+
+  .viz-text-pink-dark {
+    color: var(--color-viz-pink-dark);
+  }
+
+  .viz-bg-grey {
+    background-color: var(--color-viz-grey);
+  }
+
+  .viz-bg-white {
+    background-color: var(--color-viz-white);
   }
 
   .viz-bg-yellow {
