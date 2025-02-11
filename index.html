@@ -20,6 +20,12 @@
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    /* Hack to prevent svg from loading full width */
+    svg {
+      max-width: 24rem;
+    }
+  </style>
 
   <title>VizChitra | An Indian Data Visualization Community</title>
 </head>
@@ -32,23 +38,25 @@
           class="C2">C</span><span class="H2">H</span><span class="I2">I</span><span class="T2">T</span><span
           class="R2">R</span><span class="A2">A</span>
       </h1>
-      <svg class="viz-logo-lines" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 50 50">
-        <path fill="#FFD485"
-          d="M41.071 35.83h1.597l-4.033 9.274a1.693 1.693 0 0 0-1.282-.581h-.084l3.781-8.693h.021Zm8.11-15-2.017 4.626h-1.597l2.27-5.186c.314.352.755.58 1.28.58h.085l-.021-.02Z" />
-        <path fill="#A8BDF0"
-          d="M22.878 2.365 2.773 19.772a1.748 1.748 0 0 0-.966-1.1L21.912 1.265c.126.498.504.893.966 1.1Z" />
-        <path fill="#EE88B3"
-          d="M7.731 47.2c-.4 0-.756.144-1.05.373L.777 21.826c.126.02.252.041.378.041.4 0 .757-.145 1.05-.373L8.11 47.24a2.337 2.337 0 0 0-.378-.042Z" />
-        <path fill="#F89F72"
-          d="M35.672 46.183c0 .31.084.601.231.871L9.286 49.461a1.78 1.78 0 0 0 .105-.581 1.5 1.5 0 0 0-.252-.85l26.617-2.408a1.781 1.781 0 0 0-.105.581l.021-.02Z" />
-        <path fill="#88E0D8"
-          d="M48.32 17.718a1.638 1.638 0 0 0-.862 1.182L24.328 2.303c.44-.228.777-.664.861-1.183l23.13 16.598Z" />
-        <ellipse cx="37.29" cy="46.162" fill="#4C4C4C" rx=".945" ry=".934" />
-        <ellipse cx="7.668" cy="49.066" fill="#4C4C4C" rx=".945" ry=".934" />
-        <ellipse cx=".945" cy="20.021" fill="#4C4C4C" rx=".945" ry=".934" />
-        <ellipse cx="23.424" cy=".934" fill="#4C4C4C" rx=".945" ry=".934" />
-        <ellipse cx="49.055" cy="19.191" fill="#4C4C4C" rx=".945" ry=".934" />
-      </svg>
+      <div class="viz-logo-lines">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 50 50">
+          <path fill="#FFD485"
+            d="M41.071 35.83h1.597l-4.033 9.274a1.693 1.693 0 0 0-1.282-.581h-.084l3.781-8.693h.021Zm8.11-15-2.017 4.626h-1.597l2.27-5.186c.314.352.755.58 1.28.58h.085l-.021-.02Z" />
+          <path fill="#A8BDF0"
+            d="M22.878 2.365 2.773 19.772a1.748 1.748 0 0 0-.966-1.1L21.912 1.265c.126.498.504.893.966 1.1Z" />
+          <path fill="#EE88B3"
+            d="M7.731 47.2c-.4 0-.756.144-1.05.373L.777 21.826c.126.02.252.041.378.041.4 0 .757-.145 1.05-.373L8.11 47.24a2.337 2.337 0 0 0-.378-.042Z" />
+          <path fill="#F89F72"
+            d="M35.672 46.183c0 .31.084.601.231.871L9.286 49.461a1.78 1.78 0 0 0 .105-.581 1.5 1.5 0 0 0-.252-.85l26.617-2.408a1.781 1.781 0 0 0-.105.581l.021-.02Z" />
+          <path fill="#88E0D8"
+            d="M48.32 17.718a1.638 1.638 0 0 0-.862 1.182L24.328 2.303c.44-.228.777-.664.861-1.183l23.13 16.598Z" />
+          <ellipse cx="37.29" cy="46.162" fill="#4C4C4C" rx=".945" ry=".934" />
+          <ellipse cx="7.668" cy="49.066" fill="#4C4C4C" rx=".945" ry=".934" />
+          <ellipse cx=".945" cy="20.021" fill="#4C4C4C" rx=".945" ry=".934" />
+          <ellipse cx="23.424" cy=".934" fill="#4C4C4C" rx=".945" ry=".934" />
+          <ellipse cx="49.055" cy="19.191" fill="#4C4C4C" rx=".945" ry=".934" />
+        </svg>
+      </div>
     </div>
 
     <div class="viz-tag">
@@ -88,45 +96,47 @@
       </p>
       <p> The VizChitra community plans to drive this using these three main pillars of work.</p>
 
-      <div class="viz-flexbox-grid">
-        <div class="viz-card viz-bg-yellow">
-          <div class="viz-card-container">
-            <h4 class="viz-display-4"><span class="text-slant-back">1.</span> Consider & Curate </h4>
-            <p>Build a rhythm of curated events to spread the practice of data visualisation </p>
-            <ul>
-              <li> The VizChitra Conference (yearly cadence)</li>
-              <li> Talks & Mini-Events (quarterly cadence)</li>
-              <li> Thematic activities online (bi-monthly cadence) </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="viz-card viz-bg-teal">
-          <div class="viz-card-container ">
-            <h4 class="viz-display-4"><span class="text-slant-back">2.</span> Cultivate & Care </h4>
-            <p>Nurture a fertile space for learning & sharing of data visualisation skills </p>
-            <ul>
-              <li> Mentoring & Community Channels</li>
-              <li> Workshop & Learning events (for all levels)</li>
-              <li> Project & Internship opportunities </li>
-            </ul>
+      <div class=" viz-full-bleed">
+        <div class="viz-flexbox-grid">
+          <div class="viz-card-1 viz-bg-yellow">
+            <div class="viz-card-container">
+              <h4 class="viz-display-4"><span class="text-slant-back">1.</span> Consider & Curate </h4>
+              <p>Build a rhythm of curated events to spread the practice of data visualisation </p>
+              <ul>
+                <li> The VizChitra Conference (yearly cadence)</li>
+                <li> Talks & Mini-Events (quarterly cadence)</li>
+                <li> Thematic activities online (bi-monthly cadence) </li>
+              </ul>
+            </div>
           </div>
 
-        </div>
+          <div class="viz-card-1 viz-bg-teal">
+            <div class="viz-card-container ">
+              <h4 class="viz-display-4"><span class="text-slant-back">2.</span> Cultivate & Care </h4>
+              <p>Nurture a fertile space for learning & sharing of data visualisation skills </p>
+              <ul>
+                <li> Mentoring & Community Channels</li>
+                <li> Workshop & Learning events (for all levels)</li>
+                <li> Project & Internship opportunities </li>
+              </ul>
+            </div>
 
-        <div class="viz-card viz-bg-pink">
-          <div class="viz-card-container">
-            <h4 class="viz-display-4"><span class="text-slant-back">3.</span> Create & Collaborate</h4>
-            <p>Express and co-create to push the boundaries of data visualization </p>
-            <ul>
-              <li> Discovery of novel/innovative work, ideas & implementations</li>
-              <li> Collaborative projects with Industry & Academia</li>
-              <li> Create space for exploring new mediums & data art </li>
-            </ul>
+          </div>
+
+          <div class="viz-card-1 viz-bg-pink">
+            <div class="viz-card-container">
+              <h4 class="viz-display-4"><span class="text-slant-back">3.</span> Create & Collaborate</h4>
+              <p>Express and co-create to push the boundaries of data visualization </p>
+              <ul>
+                <li> Discovery of novel/innovative work, ideas & implementations</li>
+                <li> Collaborative projects with Industry & Academia</li>
+                <li> Create space for exploring new mediums & data art </li>
+              </ul>
+            </div>
+
           </div>
 
         </div>
-
       </div>
 
     </section>
